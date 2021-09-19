@@ -1,0 +1,34 @@
+{
+  "root": "libs/cardano-cli",
+  "sourceRoot": "libs/cardano-cli/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/cardano-cli/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cardano-cli"],
+      "options": {
+        "jestConfig": "libs/cardano-cli/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/cardano-cli",
+        "tsConfig": "libs/cardano-cli/tsconfig.lib.json",
+        "packageJson": "libs/cardano-cli/package.json",
+        "main": "libs/cardano-cli/src/index.ts",
+        "assets": ["libs/cardano-cli/*.md"]
+      }
+    }
+  },
+  "tags": ["technology:server", "framework:node"]
+}

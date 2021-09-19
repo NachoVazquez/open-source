@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@this-dot/cardano-cli": ["libs/cardano-cli/src/index.ts"],
       "@this-dot/ng-utils": ["libs/ng-utils/src/index.ts"],
       "@this-dot/route-config": ["libs/route-config/src/index.ts"]
     },

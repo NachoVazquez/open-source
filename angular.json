@@ -66,6 +66,7 @@
         }
       }
     },
+    "cardano-cli": "libs/cardano-cli",
     "ng-utils": {
       "projectType": "library",
       "root": "libs/ng-utils",

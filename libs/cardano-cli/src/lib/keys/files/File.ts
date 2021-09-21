@@ -7,5 +7,6 @@ type KeyFile = File
 type ScriptFile = File
 type VerificationKeyFile = File
 type OutputFile = File
+type SigningKeyFile = File
 
-export {KeyFile, ScriptFile, VerificationKeyFile, OutputFile}
+export {KeyFile, ScriptFile, VerificationKeyFile, OutputFile, SigningKeyFile}

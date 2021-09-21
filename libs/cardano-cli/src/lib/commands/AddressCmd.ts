@@ -1,6 +1,6 @@
 import { AddressKeyType } from "../keys/enums/KeyType";
 import { NetworkId } from "../keys/enums/NetworkId";
-import { KeyFile, OutputFile, ScriptFile } from "../keys/files/File";
+import { KeyFile, OutputFile, ScriptFile, SigningKeyFile, VerificationKeyFile } from "../keys/files/File";
 import { VerificationKeyTextOrFile } from "../keys/verification/VerificationKeyTextOrFile";
 import { PaymentVerifier } from "../keys/verifier/PaymentVerifier";
 import { StakeVerifier } from "../keys/verifier/StakeVerifier";
@@ -23,8 +23,8 @@ const renderAddressCmd = (addressCmd: AddressCmd) => {
 
 type AddressKeyGen = {
     addressKeyType: AddressKeyType
-    signingKeyFile: KeyFile
-    verificationKeyFile: KeyFile
+    signingKeyFile: SigningKeyFile
+    verificationKeyFile: VerificationKeyFile
 }
 
 type AddressKeyHash = {
@@ -50,4 +50,4 @@ type AddressInfo = {
     outputFile?: OutputFile
 }
 
-export {AddressCmd, renderAddressCmd}
+export {AddressCmd, renderAddressCmd, AddressKeyGen, AddressKeyHash, AddressBuild, AddressBuildMultiSig, AddressInfo}

@@ -1,4 +1,5 @@
 import { NetworkId } from "../keys/enums/NetworkId";
+import { RoleKey } from "../keys/enums/RoleKey";
 import { OutputFile, SigningKeyFile, VerificationKeyFile } from "../keys/files/File";
 import { VerificationKeyOrFile } from "../keys/verification/VerificationKeyOrFile";
 import { VerificationKeyOrHashOrFile } from "../keys/verification/VerificationKeyOrHashOrFile";
@@ -27,12 +28,12 @@ type StakeAddressKeyGen = {
 }
 
 type StakeAddressKeyHash = {
-    verificationKeyTextOrFile: VerificationKeyOrFile
+    verificationKeyTextOrFile: VerificationKeyOrFile<RoleKey.StakeKey>
     outputFile?: OutputFile
 }
 
 type StakeAddressBuild = {
-    verificationKeyTextOrFile: VerificationKeyOrFile
+    verificationKeyTextOrFile: VerificationKeyOrFile<RoleKey.StakeKey>
     networkId: NetworkId
     outputFile?: OutputFile
 }
@@ -44,7 +45,7 @@ type StakeRegistrationCert = {
 
 type StakeCredentialDelegationCert = {
     stakeVerifier: StakeVerifier
-    verificationKeyOrHashOrFile: VerificationKeyOrHashOrFile
+    verificationKeyOrHashOrFile: VerificationKeyOrHashOrFile<RoleKey.StakePoolKey>
     outputFile: OutputFile
 }
 

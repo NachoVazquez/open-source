@@ -1,8 +1,7 @@
 import { VerificationKeyFile } from "../files/File"
 
-export type VerificationKeyOrFile = VerificationKeyValue | VerificationKeyFile
+export type VerificationKeyOrFile<KRole> = VerificationKeyValue<KRole> | VerificationKeyFile
 
-//TODO
-type VerificationKeyValue = {
-
+type VerificationKeyValue<KRole> = {
+    role: KRole
 }

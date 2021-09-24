@@ -1,3 +1,4 @@
+import { RoleKey } from "../enums/RoleKey"
 import { ScriptFile } from "../files/File"
 import { VerificationKeyOrFile } from "../verification/VerificationKeyOrFile"
 
@@ -8,5 +9,5 @@ type StakeVerifierScriptFile = {
 }
 
 type StakeVerifierKey = {
-    verificationKeyOrFile: VerificationKeyOrFile
+    verificationKeyOrFile: VerificationKeyOrFile<RoleKey.StakeKey>
 }

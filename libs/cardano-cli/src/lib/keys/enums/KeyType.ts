@@ -1,5 +1,5 @@
 export enum AddressKeyType {
-    AddressKeyShelley,
-    AddressKeyShelleyExtended,
-    AddressKeyByron
+  AddressKeyShelley,
+  AddressKeyShelleyExtended,
+  AddressKeyByron,
 }

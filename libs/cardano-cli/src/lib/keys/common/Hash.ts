@@ -1,3 +1,3 @@
 export type Hash = {
-    unHash: string
-}
+  unHash: string;
+};

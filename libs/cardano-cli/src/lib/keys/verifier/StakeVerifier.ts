@@ -1,13 +1,13 @@
-import { RoleKey } from "../enums/RoleKey"
-import { ScriptFile } from "../files/File"
-import { VerificationKeyOrFile } from "../verification/VerificationKeyOrFile"
+import { RoleKey } from '../enums/RoleKey';
+import { ScriptFile } from '../files/File';
+import { VerificationKeyOrFile } from '../verification/VerificationKeyOrFile';
 
-export type StakeVerifier = StakeVerifierKey | StakeVerifierScriptFile
+export type StakeVerifier = StakeVerifierKey | StakeVerifierScriptFile;
 
 type StakeVerifierScriptFile = {
-    scriptFile: ScriptFile
-}
+  scriptFile: ScriptFile;
+};
 
 type StakeVerifierKey = {
-    verificationKeyOrFile: VerificationKeyOrFile<RoleKey.StakeKey>
-}
+  verificationKeyOrFile: VerificationKeyOrFile<RoleKey.StakeKey>;
+};

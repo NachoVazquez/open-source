@@ -1,4 +1,4 @@
 export enum NetworkId {
-    Mainnet,
-    Testnet
+  Mainnet,
+  Testnet,
 }

@@ -1,3 +1,3 @@
-import { KeyFile } from "../files/File";
+import { KeyFile } from '../files/File';
 
-export type VerificationKeyTextOrFile = string | KeyFile
+export type VerificationKeyTextOrFile = string | KeyFile;

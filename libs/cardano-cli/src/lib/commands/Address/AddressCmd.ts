@@ -4,21 +4,12 @@
 // import { StakeVerifier } from "../../keys/verifier/StakeVerifier";
 
 // type AddressCmd =
-//   | AddressBuild
 //   | AddressBuildMultiSig
 //   | AddressInfo;
 
 // const renderAddressCmd = (addressCmd: AddressCmd) => {
-//   if (addressCmd as AddressBuild) return 'address build';
 //   if (addressCmd as AddressBuildMultiSig) return 'address build-script';
 //   if (addressCmd as AddressInfo) return 'address info';
-// };
-
-// type AddressBuild = {
-//   paymentVerifier: PaymentVerifier;
-//   stakeVerifier?: StakeVerifier;
-//   networkId: NetworkId;
-//   outputFile?: OutputFile;
 // };
 
 // type AddressBuildMultiSig = {

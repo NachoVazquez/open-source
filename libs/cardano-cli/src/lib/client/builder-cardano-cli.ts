@@ -1,3 +1,4 @@
+import { addressBuild, AddressBuildParams } from '../commands/Address/AddressBuild';
 import { addressKeyGen, AddressKeyGenParams } from '../commands/Address/AddressKeyGen';
 import { AddressKeyHashParams, addressKeyHash } from '../commands/Address/AddressKeyHash';
 import { QueryTipParameter, queryTip } from '../commands/Query/Query';
@@ -18,6 +19,7 @@ export function CommandBuilder(cardanoConfig: CardanoConfig) {
     return {
       keyHas,
       keyGen,
+      build: addrBuild,
     };
   }
 
@@ -33,6 +35,11 @@ export function CommandBuilder(cardanoConfig: CardanoConfig) {
 
   function keyHas(parameter: AddressKeyHashParams) {
     currentCommand = addressKeyHash(parameter);
+    return CommandBuilder(config);
+  }
+
+  function addrBuild(parameter: AddressBuildParams) {
+    currentCommand = addressBuild(parameter);
     return CommandBuilder(config);
   }
 

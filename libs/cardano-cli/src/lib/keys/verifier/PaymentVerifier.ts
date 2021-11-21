@@ -1,7 +1,8 @@
+import { VerifierType } from '../enums/VerifierFileType';
 import { ScriptFile } from '../files/File';
-import { VerificationKeyTextOrFile } from '../verification/VerificationKeyTextOrFile';
+import { VerificationKeyOrFile } from '../verification/VerificationKeyOrFile';
 
 export type PaymentVerifier = {
-  paymentVerifierKey: VerificationKeyTextOrFile;
+  paymentVerifierKey: VerificationKeyOrFile<VerifierType.Payment>;
   paymentVerifierScriptFile: ScriptFile;
 };

@@ -7,8 +7,9 @@ type ScriptFile = File;
 type VerificationKeyFile = File;
 type OutputFile = File;
 type SigningKeyFile = File;
-type PaymentVerificationKeyFile = File;
+type PaymentVerificationKeyFile = VerificationKeyFile;
 type SomeKeyFile = VerificationKeyFile | SigningKeyFile;
+type StakeVerificationKeyFile = VerificationKeyFile;
 
 export {
   KeyFile,
@@ -18,5 +19,6 @@ export {
   SigningKeyFile,
   SomeKeyFile,
   PaymentVerificationKeyFile,
+  StakeVerificationKeyFile,
   File,
 };

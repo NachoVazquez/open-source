@@ -1,20 +1,13 @@
-import { PaymentVerificationKeyFile } from '../../keys/files/File';
-import { setVerificationPaymentKeyFile } from '../../keys/files/FileHelper';
-import { VerificationKeyTextOrFile } from '../../keys/verification/VerificationKeyTextOrFile';
+import { getVerifierKey } from '../../keys/common/Utils';
+import { VerifierType } from '../../keys/enums/VerifierFileType';
+import { VerificationKeyOrFile } from '../../keys/verification/VerificationKeyOrFile';
 
 function addressKeyHash(parameters: AddressKeyHashParams) {
-  return `address key-hash ${getVerificationKey(parameters.verificationKeyTextOrFile)}`;
-}
-
-function getVerificationKey(verification: VerificationKeyTextOrFile) {
-  const fileVerification = verification as PaymentVerificationKeyFile;
-  if (fileVerification.filePath != null) return setVerificationPaymentKeyFile(fileVerification);
-
-  return `payment-verification-key ${verification as string}`;
+  return `address key-hash ${getVerifierKey(parameters.verifierKey, VerifierType.Payment)}`;
 }
 
 type AddressKeyHashParams = {
-  verificationKeyTextOrFile: VerificationKeyTextOrFile;
+  verifierKey: VerificationKeyOrFile<VerifierType.Payment>;
 };
 
 export { addressKeyHash, AddressKeyHashParams };

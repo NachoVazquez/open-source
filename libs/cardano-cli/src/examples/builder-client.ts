@@ -2,6 +2,7 @@ import { CommandBuilder } from '../lib/client';
 import { ConsensusMode } from '../lib/keys/enums/ConsensusMode';
 import { AddressKeyType } from '../lib/keys/enums/KeyType';
 import { NetworkId } from '../lib/keys/enums/NetworkId';
+import { VerifierType } from '../lib/keys/enums/VerifierFileType';
 
 // Address Key Gen cmd
 CommandBuilder({
@@ -27,3 +28,21 @@ CommandBuilder({
     consensusMode: ConsensusMode.CardanoMode,
   })
   .run();
+
+CommandBuilder({
+  networkId: NetworkId.Mainnet,
+  cliPath: 'cardano-cli',
+  outputFile: { filePath: 'output.txt' },
+})
+  .address()
+  .build({
+    paymentVerifier: {
+      paymentVerifierKey: {
+        key: '#hex',
+        role: VerifierType.Payment,
+      },
+      paymentVerifierScriptFile: {
+        filePath: './script.txt',
+      },
+    },
+  });

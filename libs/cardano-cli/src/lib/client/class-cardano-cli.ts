@@ -1,4 +1,8 @@
 import { addressBuild, AddressBuildParams } from '../commands/Address/AddressBuild';
+import {
+  addressBuildMultiSig,
+  AddressBuildMultiSigParams,
+} from '../commands/Address/AddressBuildMultiSig';
 import { addressInfo, AddressInfoParams } from '../commands/Address/AddressInfo';
 import { AddressKeyGenParams, addressKeyGen } from '../commands/Address/AddressKeyGen';
 import { AddressKeyHashParams, addressKeyHash } from '../commands/Address/AddressKeyHash';
@@ -12,9 +16,7 @@ export class CardanoCLI {
   constructor(cardanoConfig: CardanoConfig) {
     this.cardanoConfig = cardanoConfig;
   }
-  queryTip(parameter: QueryTipParameter) {
-    this.command = queryTip(parameter);
-  }
+  // Address Cmds
   addressKeyGen(parameter: AddressKeyGenParams) {
     this.command = addressKeyGen(parameter);
   }
@@ -26,6 +28,14 @@ export class CardanoCLI {
   }
   addressInfo(parameter: AddressInfoParams) {
     this.command = addressInfo(parameter);
+  }
+  addressBuildMultiSig(parameter: AddressBuildMultiSigParams) {
+    this.command = addressBuildMultiSig(parameter);
+  }
+
+  //Query Cmd
+  queryTip(parameter: QueryTipParameter) {
+    this.command = queryTip(parameter);
   }
   run() {
     RunCmd(this.cardanoConfig, this.command);

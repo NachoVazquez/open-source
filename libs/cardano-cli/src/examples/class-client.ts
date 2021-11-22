@@ -23,3 +23,6 @@ cardanoCLI.queryTip({
 });
 
 cardanoCLI.run();
+
+cardanoCLI.addressBuildMultiSig({ scriptFile: { filePath: './text.txt' } });
+cardanoCLI.run();

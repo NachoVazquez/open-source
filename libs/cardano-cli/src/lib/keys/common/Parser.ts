@@ -16,9 +16,11 @@ function getVerifierType(verificationType: VerifierType) {
 function getScriptType(type: ScriptFileType) {
   switch (type) {
     case ScriptFileType.Payment:
-      return 'payment';
+      return 'payment-';
     case ScriptFileType.Stake:
-      return 'stake';
+      return 'stake-';
+    case ScriptFileType.Default:
+      return '';
   }
 }
 

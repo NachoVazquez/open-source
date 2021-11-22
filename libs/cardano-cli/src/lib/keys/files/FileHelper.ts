@@ -24,7 +24,7 @@ function setVerifierFile(verifierFile: VerificationKeyFile, verifierType: Verifi
 
 function setScriptFile(scriptFile: ScriptFile, scriptType: ScriptFileType) {
   return isValidFile(scriptFile)
-    ? `--${getScriptType(scriptType)}-script-file ${scriptFile.filePath}`
+    ? `--${getScriptType(scriptType)}script-file ${scriptFile.filePath}`
     : '';
 }
 

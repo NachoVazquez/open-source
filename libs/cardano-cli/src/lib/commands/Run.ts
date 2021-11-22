@@ -4,6 +4,7 @@ import { NetworkId } from '../keys/enums/NetworkId';
 import { isValidFile, writeOutputFile } from '../keys/files/FileHelper';
 
 export function RunCmd(config: CardanoConfig, command: string) {
+  // handle networkId (not always required) ???
   const output = execSync(`${config.cliPath} ${getNetwork(config.networkId)} ${command}`);
   if (config.outputFile && isValidFile(config.outputFile)) {
     writeOutputFile(output, config.outputFile);

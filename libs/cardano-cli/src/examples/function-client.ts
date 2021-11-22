@@ -18,3 +18,6 @@ cardanoCLI2.run();
 
 cardanoCLI2.query.tip({ consensusMode: ConsensusMode.ShelleyMode });
 cardanoCLI2.run();
+
+cardanoCLI2.address.info({ address: 'address-test' });
+cardanoCLI2.run();

@@ -1,4 +1,5 @@
 import { addressBuild, AddressBuildParams } from '../commands/Address/AddressBuild';
+import { addressInfo, AddressInfoParams } from '../commands/Address/AddressInfo';
 import { AddressKeyGenParams, addressKeyGen } from '../commands/Address/AddressKeyGen';
 import { AddressKeyHashParams, addressKeyHash } from '../commands/Address/AddressKeyHash';
 import { queryTip, QueryTipParameter } from '../commands/Query/Query';
@@ -22,6 +23,9 @@ export class CardanoCLI {
   }
   addressBuild(parameter: AddressBuildParams) {
     this.command = addressBuild(parameter);
+  }
+  addressInfo(parameter: AddressInfoParams) {
+    this.command = addressInfo(parameter);
   }
   run() {
     RunCmd(this.cardanoConfig, this.command);

@@ -1,4 +1,5 @@
 import { addressBuild, AddressBuildParams } from '../commands/Address/AddressBuild';
+import { addressInfo, AddressInfoParams } from '../commands/Address/AddressInfo';
 import { AddressKeyGenParams, addressKeyGen } from '../commands/Address/AddressKeyGen';
 import { addressKeyHash, AddressKeyHashParams } from '../commands/Address/AddressKeyHash';
 import { QueryTipParameter, queryTip } from '../commands/Query/Query';
@@ -20,6 +21,9 @@ export function createCardanoCLI(cardanoConfig: CardanoConfig): CardanoAPI {
   function addrBuild(parameter: AddressBuildParams) {
     command = addressBuild(parameter);
   }
+  function addrInfo(parameter: AddressInfoParams) {
+    command = addressInfo(parameter);
+  }
   function run() {
     RunCmd(config, command);
     command = '';
@@ -33,6 +37,7 @@ export function createCardanoCLI(cardanoConfig: CardanoConfig): CardanoAPI {
       keyGen,
       keyHash,
       build: addrBuild,
+      info: addrInfo,
     },
     run,
   };
@@ -46,6 +51,7 @@ interface CardanoAPI {
     keyGen: { (parameter: AddressKeyGenParams): void };
     keyHash: { (parameter: AddressKeyHashParams): void };
     build: { (parameter: AddressBuildParams): void };
+    info: { (parameter: AddressInfoParams): void };
   };
   run: { (): void };
 }
